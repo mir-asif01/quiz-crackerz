@@ -5,7 +5,6 @@ import SingleQuestion from '../SingleQuestion/SingleQuestion';
 const QuizPage = () => {
     const data = useLoaderData()
     const questions = data.data.questions
-    console.log(questions)
     return (
         <div>
             {
