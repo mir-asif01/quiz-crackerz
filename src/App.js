@@ -10,14 +10,20 @@ function App() {
 
   const routes = createBrowserRouter([
     {
-      path : '/',element : <Main></Main>,
-      children : [
-        {path:'/',element: <Questions></Questions>},
-        {path : 'statistics',element: <Statistics></Statistics>},
-        {path : 'blog',element: <Blog></Blog>},
+      path: '/', element: <Main></Main>,
+      children: [
+        {
+          path: '/',
+          loader : ()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
+          element: <Questions></Questions>
+        },
+        { path: 'statistics', element: <Statistics></Statistics> },
+        { path: 'blog', element: <Blog></Blog> },
+        { path: '*', element: <Error></Error> }
       ]
     },
-    {path:'*',element:<Error></Error>}
 
   ])
   return (
