@@ -13,6 +13,4 @@ const QuizPage = () => {
         </div>
     );
 };
-{/* <SingleQuestion key={qst.id} ></SingleQuestion> */}
-// console.log(qst.question)
 export default QuizPage;

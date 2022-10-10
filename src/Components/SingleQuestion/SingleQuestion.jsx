@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { EyeIcon } from '@heroicons/react/24/solid'
 
 const SingleQuestion = ({ qst }) => {
+    let count = 0;
 
     const { question, correctAnswer, options } = qst;
     const [show,showAnswer] = useState(false);
@@ -18,16 +20,16 @@ const SingleQuestion = ({ qst }) => {
     return (
         <div className='bg-blue-200 p-3 rounded-md my-3 md:mx-5'>
             <div>
-                <h1 className='text-xl'>Question : {question} <small className='bg-green-400 p-1 rounded-sm'><button onClick={()=>showAnswer(!show)}>Ans</button></small></h1>
+                <h1 className='text-xl'>Question : {question} <small><button onClick={()=>showAnswer(!show)}><EyeIcon className="h-4 w-4 text-black "/></button></small></h1>
             </div>
-            <div className='bg-amber-400'>
+            <div className='bg-green-400'>
                 {
                     show ? <h1>Answer : {correctAnswer}</h1> : ' '
                 }
             </div>
             <div className='flex justify-evenly items-center my-5'>
                 {
-                    options.map(opt => <button onClick={()=>handleChoiceBtn(opt)} className='p-3 rounded-md bg-green-100 m-1'>{opt}</button>)
+                    options.map(opt => <button key={count++} onClick={()=>handleChoiceBtn(opt)} className='p-3 rounded-md bg-green-100 m-1'>{opt}</button>)
                 }
             </div>
         </div>

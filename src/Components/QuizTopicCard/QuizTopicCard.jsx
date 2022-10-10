@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from '@heroicons/react/24/solid'
+
 
 const QuizTopicCard = ({ topic }) => {
     const { id, name, logo ,total } = topic;
@@ -10,7 +12,7 @@ const QuizTopicCard = ({ topic }) => {
                 <h1 className='text-xl'>{name}</h1>
                 <h1 className='text-xl'>{total} Questions</h1>
             </div>
-            <Link to={`/quiz/${id}`}><button className='bg-cyan-500 py-1 px-4 my-4 font-semibold text-white rounded-md'>Answer</button></Link>
+            <Link to={`/quiz/${id}`} className='flex'><button className='bg-cyan-500 py-1 px-4 my-4 font-semibold text-white rounded-md w-full'><span className='flex justify-center items-center mx-auto'>Questions<ArrowRightIcon className='h-4 w-4 ml-3'></ArrowRightIcon></span></button></Link>
         </div>
     );
 };
