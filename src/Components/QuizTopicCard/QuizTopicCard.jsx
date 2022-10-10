@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const QuizTopicCard = ({ topic }) => {
-    const { name, logo ,total } = topic;
+    const { id, name, logo ,total } = topic;
     return (
         <div className='bg-green-200 my-7 mx-2 md:my-0 p-2 rounded-md'>
             <img src={logo} alt="" />
@@ -9,7 +10,7 @@ const QuizTopicCard = ({ topic }) => {
                 <h1 className='text-xl'>{name}</h1>
                 <h1 className='text-xl'>{total} Questions</h1>
             </div>
-            <button className='bg-cyan-500 py-1 px-4 my-4 font-semibold text-white rounded-md'>Answer</button>
+            <Link to={`/quiz/${id}`}><button className='bg-cyan-500 py-1 px-4 my-4 font-semibold text-white rounded-md'>Answer</button></Link>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import Questions from './Components/Questions/Questions.jsx'
 import Statistics from './Components/Statistics/Statistics';
 import Blog from './Components/Blog/Blog';
 import Error from './Components/Error/Error';
+import QuizPage from './Components/QuizPage/QuizPage';
 
 function App() {
 
@@ -14,10 +15,17 @@ function App() {
       children: [
         {
           path: '/',
-          loader : ()=>{
+          loader: () => {
             return fetch('https://openapi.programming-hero.com/api/quiz')
           },
           element: <Questions></Questions>
+        },
+        {
+          path : 'quiz/:quizId',
+          loader : ({params})=>{
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+          },
+          element : <QuizPage></QuizPage>
         },
         { path: 'statistics', element: <Statistics></Statistics> },
         { path: 'blog', element: <Blog></Blog> },

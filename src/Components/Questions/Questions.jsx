@@ -5,7 +5,6 @@ import QuizTopicCard from '../QuizTopicCard/QuizTopicCard'
 const Questions = () => {
     const topicsObj = useLoaderData();
     const topics = topicsObj.data;
-    console.log(topics);
     return (
         <div>
             <div className='bg-gray-100 py-7 px-10'>
