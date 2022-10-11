@@ -33,7 +33,7 @@ const SingleQuestion = ({ qst }) => {
             </div>
             <div className='flex flex-col md:flex-row justify-evenly items-center my-5'>
                 {
-                    options.map(opt => <button key={count++} onClick={()=>handleChoiceBtn(opt)} className='p-3 rounded-md bg-green-100 m-1'>{opt}</button>)
+                    options.map(opt => <button type='radio' key={count++} onClick={()=>handleChoiceBtn(opt)} className='p-3 rounded-md bg-green-100 m-1'>{opt}</button>)
                 }
             </div>
             <ToastContainer></ToastContainer>
