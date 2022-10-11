@@ -4,8 +4,6 @@
 
 https://exquisite-peony-1efceb.netlify.app/
 
-<img width="300" src="C:\Users\user\Desktop\Screenshot (4).png">
-
 ## Features
 
 1. Right and Wrong Answer couter
