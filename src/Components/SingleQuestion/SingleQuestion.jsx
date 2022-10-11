@@ -3,7 +3,7 @@ import { EyeIcon } from '@heroicons/react/24/solid';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
-const SingleQuestion = ({ qst }) => {
+const SingleQuestion = ({ qst , right , setRight , wrong , setWrong,tryCount,setTryCount}) => {
     let count = 0;
 
     // const toast= "Wow so easy!";
@@ -11,16 +11,18 @@ const SingleQuestion = ({ qst }) => {
     const [show,showAnswer] = useState(false);
 
     const handleChoiceBtn = (opt) =>{
-        
+        setTryCount(tryCount + 1);
         if(opt === correctAnswer ){
             toast("Wow Correct Answer✔✔✔✔");
-            return ;
+            setRight(right+1)
         }
         else{
             toast("Sorry! Wrong Answer❌❌❌");
-            return;
+           setWrong(wrong+1)
         }
     }
+    // setRight(right)
+    // setWrong(wrong)
     return (
         <div className='bg-blue-200 p-3 rounded-md my-3 md:mx-5'>
             <div>
