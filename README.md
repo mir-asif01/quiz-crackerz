@@ -4,7 +4,7 @@
 
 https://exquisite-peony-1efceb.netlify.app/
 
-<img src="C:\Users\user\Desktop\Screenshot (4).png">
+<img width="300" src="C:\Users\user\Desktop\Screenshot (4).png">
 
 ## Features
 
